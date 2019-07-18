@@ -8,7 +8,7 @@ ENV CRTS_DIR=/etc/mosquitto/certs
 ENV KEY_DIR=/etc/mosquitto/server_keys 
 ENV DETAILS='/CN=mqtt.broker.org'
 
-RUN apk --no-cache --update add openssl-dev openssl mosquitto
+RUN apk --no-cache --update add mosquitto
 
 COPY . /etc/mosquitto/ 
 
