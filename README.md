@@ -10,7 +10,7 @@ Insert new users into "userfile.txt" as: `<user>:<password>`
 
 The password will be hashed during image build using `mosquitto_passwd` so that there will not be on clear text on the container. However, you are still required to manage and generate strong passwords for your clients. 
 
-Undertand that while your users need to be authenticated, **TLS will not enabled on this container, the credentials will be sent over the network in clear text.** 
+Understand that while your users need to be authenticated, **TLS will not enabled on this container, the credentials will be sent over the network in clear text.** 
 
 Be sure to enable TLS and manage the required certificates if your threat model requires it.
 
