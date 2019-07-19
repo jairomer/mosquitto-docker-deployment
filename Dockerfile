@@ -3,10 +3,8 @@
 
 FROM gliderlabs/alpine
 
-ENV CA_DIR=/etc/mosquitto/ca_certificates
-ENV CRTS_DIR=/etc/mosquitto/certs
-ENV KEY_DIR=/etc/mosquitto/server_keys 
-ENV DETAILS='/CN=mqtt.broker.org'
+# Note: If deploying in a raspberry pi, use 
+# FROM hypriot/rpi-alpine
 
 RUN apk --no-cache --update add mosquitto
 
