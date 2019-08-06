@@ -42,7 +42,7 @@ I was only able to make TLS work on the broker having the termination '.pem' on 
 
 In principle, they should be exact copies, but in some versions of openssl a DER (binary) file might be generated instead. 
 
-According to [this][https://stackoverflow.com/questions/991758/how-to-get-pem-file-from-key-and-crt-files] stackoverflow post, for converting DER certificates to PEM:
+According to [this](https://stackoverflow.com/questions/991758/how-to-get-pem-file-from-key-and-crt-files) stackoverflow post, for converting DER certificates to PEM:
 ```
 openssl x509 -inform DER -outform PEM -in server.crt -out server.crt.pem
 ```
