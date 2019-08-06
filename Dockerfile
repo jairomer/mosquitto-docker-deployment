@@ -17,6 +17,7 @@ WORKDIR /etc/mosquitto
 RUN mosquitto_passwd -U userfile.txt
 
 EXPOSE 1883
+EXPOSE 8883
 
 # Run mosquitto
 ENTRYPOINT mosquitto -v -c /etc/mosquitto/mosquitto.conf

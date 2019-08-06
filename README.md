@@ -23,3 +23,33 @@ To run it on port 1883 of your machine:
 ```
 docker run -p 1883:1883 mosquitto-auth 
 ``` 
+
+## Client Authentication + TLS support 
+
+To enable TLS support, the required files must be generated, signed, loaded into the broker final deployment and setup in the `mosquitto.conf` file. 
+
+Read the mosquitto documentation for more details on how to edit this file. 
+
+On the broker we need to provide at least: 
+- CA certificate, self-generated or not. 
+- Server certificate 
+- Server private key 
+
+To help with dealing with the certificate generation process, the script `generate_cert_keys.sh` to guide on the creation of a self signed certificate for the server. 
+
+
+I was only able to make TLS work on the broker having the termination '.pem' on all these files.
+
+In principle, they should be exact copies, but in some versions of openssl a DER (binary) file might be generated instead. 
+
+According to [this][https://stackoverflow.com/questions/991758/how-to-get-pem-file-from-key-and-crt-files] stackoverflow post, for converting DER certificates to PEM:
+```
+openssl x509 -inform DER -outform PEM -in server.crt -out server.crt.pem
+```
+
+And for the '.key' files:
+```
+openssl rsa -inform DER -outform PEM -in server.crt -out server.crt.pem
+```
+
+ 
