@@ -1,4 +1,4 @@
-# Mosquitto Auth + Docker.
+# Mosquitto Broker Auth + Docker.
 
 Mosquitto is a broker for the MQTT protocol version 3.1. Docker is a computer program that performs operating-system-level virtualization also known as containerization.
 
