@@ -35,10 +35,6 @@ On the broker we need to provide at least:
 - Server certificate 
 - Server private key 
 
-To help with dealing with the certificate generation process, the script `generate_cert_keys.sh` to guide on the creation of a self signed certificate for the server. 
+To help with dealing with the certificate generation process, the script `generate_cert_keys.sh` is provided to guide on the creation of a self signed certificate for the server. 
 
-
-I was only able to make TLS work on the broker having the termination '.pem' on all these files.
-
-In principle, they should be exact copies, but in some versions of openssl a DER (binary) file might be generated instead. 
-
+I was only able to make TLS work on the broker by having the termination '.pem' on all these files.
